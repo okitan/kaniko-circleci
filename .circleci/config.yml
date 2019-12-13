@@ -1,0 +1,13 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: oktian/kaniko-circleci:test
+    steps:
+      - run: /kaniko/executor version
+
+workflows:
+  test:
+    jobs:
+      - test
